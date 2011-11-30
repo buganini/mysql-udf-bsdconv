@@ -1,0 +1,20 @@
+> cc -shared -fPIC -L/usr/local/lib -lbsdconv -I/usr/local/include/mysql -I/usr/local/include -o udf_bsdconv.so udf_bsdconv.c
+
+> sudo cp udf_bsdconv.so /usr/local/lib/mysql/plugin/
+
+> mysql -u root
+mysql> CREATE FUNCTION Bsdconv RETURNS STRING SONAME 'udf_bsdconv.so';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select bsdconv('utf-8:full:upper:utf-8','test');
++--------------------------------------------------------------------+
+| bsdconv('utf-8:full:upper:utf-8','test')                           |
++--------------------------------------------------------------------+
+| ＵＴＦ－８：ＦＵＬＬ：ＵＰＰＥＲ：ＵＴＦ－８ |
++--------------------------------------------------------------------+
+1 row in set (0.33 sec)
+
+mysql> drop function bsdconv;
+Query OK, 0 rows affected (0.00 sec)
+
+
