@@ -38,8 +38,8 @@ char * Bsdconv(UDF_INIT *initid,
 
 	bsdconv_init(ins);
 	ins->output_mode=BSDCONV_AUTOMALLOC;
-	ins->input.data=args->args[0];
-	ins->input.len=args->lengths[0];
+	ins->input.data=args->args[1];
+	ins->input.len=args->lengths[1];
 	ins->input.flags=0;
 	ins->flush=1;
 	bsdconv(ins);
