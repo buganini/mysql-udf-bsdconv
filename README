@@ -1,6 +1,8 @@
-> cc -shared -fPIC -L/usr/local/lib -lbsdconv -I/usr/local/include/mysql -I/usr/local/include -o udf_bsdconv.so udf_bsdconv.c
+Check path in Makefile
 
-> sudo cp udf_bsdconv.so /usr/local/lib/mysql/plugin/
+> make
+
+> sudo make install
 
 > mysql -u root
 mysql> CREATE FUNCTION Bsdconv RETURNS STRING SONAME 'udf_bsdconv.so';
