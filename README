@@ -16,5 +16,5 @@ mysql> select bsdconv('utf-8:full:upper:utf-8','test');
 +------------------------------------------+
 1 row in set (0.01 sec)
 
-mysql> DROP FUNCTION bsdconv;
+mysql> DROP FUNCTION IF EXISTS bsdconv;
 Query OK, 0 rows affected (0.00 sec)
