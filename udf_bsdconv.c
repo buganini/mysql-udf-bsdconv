@@ -41,6 +41,7 @@ char * Bsdconv(UDF_INIT *initid,
 	ins->input.data=args->args[1];
 	ins->input.len=args->lengths[1];
 	ins->input.flags=0;
+	ins->input.next=NULL;
 	ins->flush=1;
 	bsdconv(ins);
 
