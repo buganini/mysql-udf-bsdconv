@@ -1,9 +1,10 @@
+DESTDIR?=
 PREFIX?=	/usr/local
 LOCALBASE?=${PREFIX}
 
 BSDCONV_FLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -lbsdconv
 MYSQL_FLAGS=	-I${LOCALBASE}/include/mysql
-INSTALL_PATH=	${PREFIX}/lib/mysql/plugins
+INSTALL_PATH=	${DESTDIR}${PREFIX}/lib/mysql/plugins
 
 all: udf_bsdconv.so
 
