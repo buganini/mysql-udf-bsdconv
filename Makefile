@@ -1,7 +1,8 @@
 PREFIX?=	/usr/local
+LOCALBASE?=${PREFIX}
 
-BSDCONV_FLAGS=	-I${PREFIX}/include -L${PREFIX}/lib -lbsdconv
-MYSQL_FLAGS=	-I${PREFIX}/include/mysql
+BSDCONV_FLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -lbsdconv
+MYSQL_FLAGS=	-I${LOCALBASE}/include/mysql
 INSTALL_PATH=	${PREFIX}/lib/mysql/plugins
 
 all: udf_bsdconv.so
